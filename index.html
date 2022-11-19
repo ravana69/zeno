@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Webpage Status</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/dompurify@2.3.5/dist/purify.min.js"></script>
+  </head>
+  <body>
+        <script>
+    var colors = ["red", "blue", "green", "black"];
+    var colorIndex = 0;
+    function changeColor() {
+        var col = document.getElementById("body");
+        if( colorIndex >= colors.length ) {
+            colorIndex = 0;
+        }
+        col.style.backgroundColor = colors[colorIndex];
+        colorIndex++;
+    }
+  </script>
+    <body id='body'>
+    <button onclick="changeColor();">Change color</button>
+  </body>
+    <div class="pageContainer">
+      <div class="headline">
+        <img src="logo.svg" alt="Logo" width="200px" />
+        <span> Webpages Status </span>
+      </div>
+      <div id="reports" class="reportContainer"></div>
+      <div id="incidents" class="incidentsContainer">
+        <div class="statusContainer">
+          <div class="statusHeader">
+            <h3 class="incidentReportsHeader">Incident Reports</h3>
+          </div>
+          <div id="incidentReport">
+            None recorded
+          </div>
+        </div>
+      </div>
+      <div id="tooltip" class="tooltip" style="opacity: 0">
+        <div id="tooltipArrow" class="tooltipArrow"></div>
+        <div id="tooltipDateTime" class="tooltipDateTime"></div>
+        <div id="tooltipStatus" class="tooltipStatus"></div>
+        <hr />
+        <div id="tooltipDescription" class="tooltipDescription"></div>
+      </div>
+      <div id="templates" style="display: none">
+        <div
+          id="statusSquareTemplate"
+          class="statusSquare $color"
+          data-status="$color"
+        ></div>
+        <div id="statusLineTemplate" class="statusLine"></div>
+        <div
+          id="statusStreamContainerTemplate"
+          class="statusStreamContainer"
+        ></div>
+        <div id="statusContainerTemplate" class="statusContainer">
+          <div class="statusHeader">
+            <h6 class="statusTitle">$title&nbsp;</h6>
+            <div class="$color statusHeadline">$status</div>
+          </div>
+          <div class="statusSubtitle">
+            <div class="sectionUrl"><a href="$url">$url</a></div>
+            <div class="statusUptime">$upTime in the last 30 days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      This is Status Chaecker For
+      <a href="https://github.com/statsig-io/statsigstatus/"
+        >ravana69.github.io</a
+      >.
+      <br>
+      Forked from
+      <a href="https://github.com/ravana69/statuspage/"
+        >Statsig's Status Page Template</a
+      >.
+    </footer>
+  <script>
+    genAllReports();
+    window.addEventListener('load', () => {
+      genIncidentReport();
+    });
+  </script>
+</html>
