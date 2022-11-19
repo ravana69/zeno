@@ -1,6 +1,6 @@
 # Status Checker For zeno.fm
 
-| **S.No.`** | **Name** | **Link** | **Deep Link** |
+| **S.No.** | **Name** | **Link** | **Deep Link** |
 |:---:|:---:|:---:|:---:|
 | **1** | **Ravana-1** | **http://stream.zeno.fm/4jykicfmjjutv** | **https://stream-59.zeno.fm/rc2skfmh838uv?zs=UcDhafDWTamvop0XN3mBOQ** |
 | **2** | **Ravana-2** | **http://stream.zeno.fm/39zagfub938uv** | **https://stream-59.zeno.fm/39zagfub938uv?zs=kpi4UTbLQ8eGuXTXpYqKow** |
