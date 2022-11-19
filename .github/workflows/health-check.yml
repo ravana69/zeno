@@ -1,8 +1,9 @@
-name: Scheduled Zeno Health Check
+name: Zeno Update
 
-# Controls when the action will run.
 on:
+  workflow_dispatch:
   schedule:
+    # Runs at every 1 min
     - cron: '*/120 * * * *'0
 
 jobs:
